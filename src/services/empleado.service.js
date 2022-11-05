@@ -45,6 +45,13 @@ class EmpleadoService{
         await empleado.update(data)
         return "Empleado actualizado"
     }
+
+    async delete(id){
+        Empleado.destroy(
+            {where: {codigo:id}}
+            )
+        return "Empleado borrado"
+    }
 }
 
 module.exports = EmpleadoService;
